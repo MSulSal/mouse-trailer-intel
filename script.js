@@ -19,7 +19,7 @@ const getTrailerClass = (type) => {
     case "video":
       return "fa-solid fa-play";
     default:
-      return "fa-solid fa-arrow-up-right";
+      return "fa-solid fa-arrow-up-right-from-square";
   }
 };
 
