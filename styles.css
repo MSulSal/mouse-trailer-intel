@@ -2,19 +2,15 @@ body {
   background-color: rgb(20, 20, 20);
   height: 100vh;
   margin: 0px;
+
   display: flex;
   align-items: center;
   justify-content: center;
   gap: clamp(10px, 4vw, 100px);
-  padding: 10px;
 }
 
-#bg1 {
-  background-image: url("bg1.jpg");
-}
-
-#bg2 {
-  background-image: url("bg2.jpg");
+body:hover > #trailer {
+  opacity: 1;
 }
 
 #trailer {
@@ -26,41 +22,47 @@ body {
   position: fixed;
   left: 0px;
   top: 0px;
-  z-index: 1000;
+  z-index: 10000;
 
-  pointer-events: none; /* clicks and hovers pass through */
+  pointer-events: none;
   opacity: 0;
   transition: opacity 500ms ease;
-}
 
-body:hover > #trailer {
-  opacity: 1;
-}
-
-.interactable {
-  width: clamp(200px, 50vw, 400px);
-  height: clamp(300px, 75vw, 600px);
-  background-size: 100%;
-}
-
-.interactable:hover {
-  background-size: 105%;
-  opacity: 0.8;
+  display: grid;
+  place-items: center;
 }
 
 #trailer:not([data-type=""]) > #trailer-icon {
   opacity: 1;
 }
 
-#trailer:not([data-type=""]) {
-  height: 60px;
-  width: 60px;
-}
-
 #trailer-icon {
-  font-size: 60px;
-  line-height: 40px;
+  font-size: 6px;
+  line-height: 4px;
 
   opacity: 0;
   transition: opacity 400ms ease;
+}
+
+#bg1 {
+  background-image: url("bg1.jpg");
+}
+
+#bg2 {
+  background-image: url("bg2.jpg");
+}
+
+.interactable {
+  aspect-ratio: 1 / 1.5;
+  width: clamp(120px, 40vmin, 600px);
+  background-position: center 50%;
+  background-size: 100%;
+  opacity: 0.4;
+
+  transition: background-size 400ms ease, opacity 400ms ease;
+}
+
+.interactable:hover {
+  background-size: 105%;
+  opacity: 0.8;
 }
