@@ -52,6 +52,11 @@ body:hover > #trailer {
   opacity: 1;
 }
 
+#trailer:not([data-type=""]) {
+  height: 60px;
+  width: 60px;
+}
+
 #trailer-icon {
   font-size: 60px;
   line-height: 40px;
