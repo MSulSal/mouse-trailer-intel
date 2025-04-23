@@ -53,8 +53,8 @@ body:hover > #trailer {
 }
 
 #trailer-icon {
-  font-size: 6px;
-  line-height: 4px;
+  font-size: 60px;
+  line-height: 40px;
 
   opacity: 0;
   transition: opacity 400ms ease;
