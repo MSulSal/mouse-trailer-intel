@@ -2,6 +2,19 @@ body {
   background-color: rgb(20, 20, 20);
   height: 100vh;
   margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 4vw, 100px);
+  padding: 10px;
+}
+
+#bg1 {
+  background-image: url("bg1.jpg");
+}
+
+#bg2 {
+  background-image: url("bg2.jpg");
 }
 
 #trailer {
@@ -22,4 +35,27 @@ body {
 
 body:hover > #trailer {
   opacity: 1;
+}
+
+.interactable {
+  width: clamp(200px, 50vw, 400px);
+  height: clamp(300px, 75vw, 600px);
+  background-size: 100%;
+}
+
+.interactable:hover {
+  background-size: 105%;
+  opacity: 0.8;
+}
+
+#trailer:not([data-type=""]) > #trailer-icon {
+  opacity: 1;
+}
+
+#trailer-icon {
+  font-size: 6px;
+  line-height: 4px;
+
+  opacity: 0;
+  transition: opacity 400ms ease;
 }
